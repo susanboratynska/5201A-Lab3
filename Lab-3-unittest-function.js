@@ -6,48 +6,16 @@
  * Returns true if input validates.
  * @param {string} idIn
  */
+var humberRegex = /^N\d{8}$/i;
+function checkHumberld(userIn){
+	"use strict";
+	let validId = false;
 
- function PageLoad(){
-
- 	var humberRegex = /N\d{8}/i;
-
-
-
- 	function checkHumbrld(userIn){
-		"use strict";
-		let validId = false;
-
-		
-
-		if (userIn === "" || !userIn.test(humberRegex)){
-			validId = true;
-			return validID; 
-		}
-
-
-
+	if (humberRegex.test(userIn)) {
+		validId = true;
 	}
 
+	return validId;
 
-
-	function ProcessForm(event){
-		event.preventDefault(); //BUILT IN FUNCTION THAT PREVENTS PAGE FROM SUBMITTING
-	 	
-	 	var formhandle = document.forms.login;
- 		var userInput = formhandle.humberLogin.value;
- 		//console.log(userInput);
- 		// alert("test"); //CONFIRM SUBMIT FORM WORKS 
-	}
-
-	var loginForm = document.querySelector("form");
-
-	loginForm.addEventListener("submit", ProcessForm);
-
-
-
-
-	
-
- }
-
-window.onload = PageLoad; 
+}
+ 
